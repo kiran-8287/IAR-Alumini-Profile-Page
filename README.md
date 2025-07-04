@@ -74,5 +74,5 @@ You can also use the **Update** feature to change your details, including your p
 ---
 
 Enjoy customizing your profile! 😃
-![image](https://github.com/user-attachments/assets/cbdf580f-9613-45c7-a8ad-31dddcefd3e1)
+
 
