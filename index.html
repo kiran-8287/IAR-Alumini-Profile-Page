@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alumni Profile - IIT Palakkad</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header with Logos -->
+    <header class="top-header">
+        <div class="header-logos">
+            <img src="iitpkdlogo.jpg" alt="IIT Palakkad Logo" class="logo-effect iit-logo">
+            <img src="iarcell_logo.png" alt="IAR Cell Logo" class="logo-effect iar-logo">
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1 class="page-title">Alumni Profile</h1>
+            <p class="page-subtitle">Connecting Excellence, Building Future</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="container">
+        <div class="profile-card fade-in-up">
+            <!-- Profile Header with Avatar and Testimonial -->
+            <div class="profile-header">
+                <div class="profile-avatar">
+                    <div class="avatar-container">
+                        <img src="default_image.jpeg" alt="Profile Avatar" id="profile-avatar-img" class="avatar-img">
+                        <div class="status-badge">Verified</div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-block">
+                    <div class="testimonial-quote">
+                        <span class="quote-mark">"</span>
+                        <span id="testimonial-text">
+                            My years at IIT Palakkad were transformative. The vibrant campus, inspiring professors, and lifelong friendships made my journey unforgettable! The academic rigor, combined with a supportive community, helped me grow not just as an engineer but as a person. I am grateful for the opportunities, the challenges, and the memories that have shaped my career and life.
+                        </span>
+                        <span class="quote-mark">"</span>
+                    </div>
+                    <div class="testimonial-author">
+                        — Arjun Sharma, B.Tech CSE, Class of 2022
+                    </div>
+                </div>
+            </div>
+
+            <!-- Profile Content -->
+            <div class="profile-content">
+                <!-- Personal Details Section -->
+                <section class="details-section">
+                    <h2 class="section-title">Personal Details</h2>
+                    <div class="details-grid">
+                        <div class="detail-item">
+                            <label class="detail-label">Full Name</label>
+                            <span class="detail-value" id="name">Arjun Sharma</span>
+                        </div>
+                        <div class="detail-item">
+                            <label class="detail-label">Email Address</label>
+                            <span class="detail-value" id="email">arjun.sharma@alumni.iitpkd.ac.in</span>
+                        </div>
+                        <div class="detail-item">
+                            <label class="detail-label">Department</label>
+                            <span class="detail-value" id="department">Computer Science & Engineering</span>
+                        </div>
+                        <div class="detail-item">
+                            <label class="detail-label">Degree Program</label>
+                            <span class="detail-value" id="degree">Bachelor of Technology</span>
+                        </div>
+                        <div class="detail-item">
+                            <label class="detail-label">Graduation Year</label>
+                            <span class="detail-value" id="passout-year">2022</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Professional Details Section -->
+                <section class="details-section">
+                    <h2 class="section-title">Professional Details</h2>
+                    <div class="details-grid">
+                        <div class="detail-item">
+                            <label class="detail-label">Current Position</label>
+                            <span class="detail-value" id="job-title">Senior Software Engineer</span>
+                        </div>
+                        <div class="detail-item">
+                            <label class="detail-label">Organization</label>
+                            <span class="detail-value" id="company">Google India</span>
+                        </div>
+                        <div class="detail-item">
+                            <label class="detail-label">Work Location</label>
+                            <span class="detail-value" id="location">Bangalore, Karnataka, India</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Action Buttons -->
+                <div class="action-buttons">
+                    <button class="btn btn-primary" id="update-btn">
+                        <span class="btn-icon">✏️</span>
+                        Update Profile
+                    </button>
+                    <button class="btn btn-secondary" id="verify-btn">
+                        <span class="btn-icon">🔍</span>
+                        Request Verification
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Update Profile Modal -->
+    <div class="modal-overlay" id="modal-overlay">
+        <div class="modal">
+            <div class="modal-header">
+                <h3 class="modal-title">Update Profile Information</h3>
+                <button class="modal-close" id="modal-close" aria-label="Close modal">&times;</button>
+            </div>
+            
+            <div class="modal-content">
+                <form class="update-form" id="update-form">
+                    <!-- Personal Details Section -->
+                    <div class="form-section">
+                        <h4 class="form-section-title">Personal Information</h4>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="form-avatar">Profile Photo</label>
+                                <input type="file" id="form-avatar" name="avatar" accept="image/*">
+                                <img id="avatar-preview" src="default_image.jpeg" alt="Avatar Preview" class="avatar-preview" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; margin-top: 12px;">
+                            </div>
+                        </div>
+                        
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="form-name">Full Name *</label>
+                                <input type="text" id="form-name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="form-email">Email Address *</label>
+                                <input type="email" id="form-email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="form-department">Department *</label>
+                                <select id="form-department" name="department" required>
+                                    <option value="">Select Department</option>
+                                    <option value="Computer Science & Engineering">Computer Science & Engineering</option>
+                                    <option value="Electrical Engineering">Electrical Engineering</option>
+                                    <option value="Mechanical Engineering">Mechanical Engineering</option>
+                                    <option value="Civil Engineering">Civil Engineering</option>
+                                    <option value="Chemical Engineering">Chemical Engineering</option>
+                                    <option value="Aerospace Engineering">Aerospace Engineering</option>
+                                    <option value="Materials Science & Engineering">Materials Science & Engineering</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="form-degree">Degree Program *</label>
+                                <select id="form-degree" name="degree" required>
+                                    <option value="">Select Degree</option>
+                                    <option value="Bachelor of Technology">Bachelor of Technology (B.Tech)</option>
+                                    <option value="Master of Technology">Master of Technology (M.Tech)</option>
+                                    <option value="Master of Science">Master of Science (M.S.)</option>
+                                    <option value="Doctor of Philosophy">Doctor of Philosophy (Ph.D.)</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="form-passout-year">Graduation Year *</label>
+                                <input type="number" id="form-passout-year" name="passout-year" min="2015" max="2030" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Professional Details Section -->
+                    <div class="form-section">
+                        <h4 class="form-section-title">Professional Information</h4>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="form-job-title">Current Position *</label>
+                                <input type="text" id="form-job-title" name="job-title" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="form-company">Organization *</label>
+                                <input type="text" id="form-company" name="company" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="form-location">Work Location *</label>
+                                <input type="text" id="form-location" name="location" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial Section -->
+                    <div class="form-section">
+                        <h4 class="form-section-title">Testimonial</h4>
+                        <div class="form-group">
+                            <label for="form-testimonial">Your Testimonial *</label>
+                            <textarea id="form-testimonial" name="testimonial" rows="4" required style="resize: vertical;"></textarea>
+                        </div>
+                    </div>
+
+                    <!-- Form Actions -->
+                    <div class="form-actions">
+                        <button type="button" class="btn btn-outline" id="cancel-btn">Cancel</button>
+                        <button type="submit" class="btn btn-primary">Save Changes</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Verification Email Modal -->
+    <div class="modal-overlay" id="verify-modal-overlay">
+        <div class="modal">
+            <div class="modal-header">
+                <h3 class="modal-title">Email Verification</h3>
+                <button class="modal-close" id="verify-modal-close" aria-label="Close modal">&times;</button>
+            </div>
+            <div class="modal-content">
+                <p id="verify-modal-message">A verification email has been sent to <span id="verify-email"></span>. Please check your inbox.</p>
+                <button class="btn btn-primary" id="verify-btn-modal">Verify</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
